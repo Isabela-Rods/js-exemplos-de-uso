@@ -1,11 +1,13 @@
 // Seleciona o botão de cálculo e adiciona um evento de clique
-// document.getElementById("calculate").addEventListener("click", function () {
+ document.getElementById("calculate").addEventListener("click", function () {
   // Obtém os valores dos campos de entrada e converte para números decimais
 
-    // 1ª Digitação (Aqui)
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    
 
   // Seleciona o elemento onde o resultado será exibido
-  
+  const resultElement = document.getElementById('result');
 
   // Bloco try: tenta executar o código
   try {
@@ -18,9 +20,10 @@
     if (num2 === 0) {
       throw new Error("Divisão por zero não é permitida."); // Lança um erro personalizado
     }
+  
 
     // Calcula a divisão
-    
+    const result = num1 / num2;
 
     // Exibe o resultado no parágrafo
     resultElement.textContent = `Resultado: ${result}`;
@@ -32,4 +35,4 @@
     // Bloco finally: executado sempre, independentemente de erro
     console.log("Operação concluída."); // Mensagem de log no console
   }
-// });
+ });

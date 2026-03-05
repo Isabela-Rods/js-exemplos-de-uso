@@ -53,13 +53,13 @@
       const name = form.name.value.trim();
       const email = form.email.value.trim();
       const password = form.password.value.trim();
-    })
+    
 
     // Variável para controlar se o formulário é válido
     let isValid = true;
 
       // Validação do nome
-      if (name === '') {
+      if (name === '' || name.length) {
         document.querySelector('#nameError').textContent = 'Nome é obrigatório.';
         isValid = false; // Formulário inválido
       } else {
@@ -75,15 +75,20 @@
       }
 
       // Validação da senha
-      if (password.length < 6) {
-        document.querySelector('#passwordError').textContent = 'Senha deve ter pelo menos 6 caracteres.';
+      if (password.length < 3) {
+        document.querySelector('#passwordError').textContent = 'Senha deve ter pelo menos 3 caracteres.';
         isValid = false; // Formulário inválido
       } else {
         document.querySelector('#passwordError').textContent = ''; // Limpa a mensagem de erro
       }
 
       // Se o formulário for válido, exibe uma mensagem e reseta os campos
+      if (isValid){
+        alert ('Cadastro realizado com sucesso!');
+        form.reset(); //limpa os campos do formulário para o próximo cadastro
+      }
 
+    });
 
   </script>
 </body>
