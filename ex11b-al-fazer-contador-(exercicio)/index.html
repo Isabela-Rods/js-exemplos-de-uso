@@ -56,9 +56,15 @@
       "Não importa o quão devagar você vá, desde que você não pare. – Confúcio"
     ];
 
-       // 1ª Digitação (Resolva aqui o exercício)
+    let p = document.getElementById('quote')
+    let button = document.getElementById('newQuoteButton')
 
-
+    function generateQuote(){
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      p.textContent = quotes[randomIndex];
+    }
+    
+    button.addEventListener('click', generateQuote)
   </script>
 </body>
 </html>

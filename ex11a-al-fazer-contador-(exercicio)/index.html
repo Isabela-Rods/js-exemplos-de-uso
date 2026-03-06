@@ -48,10 +48,31 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+    const Iniciar = document.getElementById('startButton');
+    const Pausar = document.getElementById('pauseButton');
+    const Resetar = document.getElementById('resetButton');
+    const tempo = document.getElementById('timer');
 
+    let timer = 0;
+    let intervalo 
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    // Iniciar
+    Iniciar.addEventListener('click', () => {
+    intervalo = setInterval(function() {
+    timer++
+    tempo.textContent = timer
+  }, 1000)
+})
 
+    Pausar.addEventListener('click', () => {
+      clearInterval(intervalo)
+  });
+
+    Resetar.addEventListener('click', () => {
+      clearInterval(intervalo)
+      timer = 0
+      tempo.textContent = 0
+  })
 
   </script>
 </body>
